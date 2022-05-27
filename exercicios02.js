@@ -249,7 +249,213 @@ console.log(somarNumeros([10, 10, 10]))
 
 // questão 18
 
+function despesasTotais(array) {
+    let somador = 0
+    for(variavel of array) {
+        valor = parseFloat(variavel.preço)
+        somador+=valor
+    }
+
+    return somador
+}
+
+console.log(despesasTotais([
+    {'nome': 'Jornal online', 'categoria': 'Informação', 'preço': 89.99},
+    {'nome': 'Cinema', 'categoria': 'Entretenimento', 'preço': 150}
+]))
+
+
+// questão 19
+
+function calcularMedia(array) {
+    let somador = 0
+    for(variavel of array) {
+        somador+=variavel
+    }
+
+    let media = somador / array.length
+
+    return media
+}
+
+
+console.log(calcularMedia([0, 10]))
+console.log(calcularMedia([1, 2, 3, 4, 5]))
+
+
+// questão 20
+
+function areaDoTriangulo(base, altura) {
+    let area = (base*altura) / 2
+
+    return area.toFixed(2)
+}
+
+
+console.log(areaDoTriangulo(10, 15))
+
+
+// questão 21
+
+function menorNumero(array) {
+    let menor = 0
+    for(variavel in array) {
+        if(variavel == 0) {
+            menor = array[variavel]
+        }
+
+        if(array[variavel] < menor) {
+            menor = array[variavel]
+        }
+    }
+
+    return menor
+}
+
+
+console.log(menorNumero([10, 5, 35, 65]))
+console.log(menorNumero([5, -15, 50, 3]))
+
+
+// questão 22
+
+function funcaoDaSorte(num) {
+    let aleatorio = Math.floor(Math.random() * 10);
+
+    if(num === aleatorio) {
+        console.log(`Parabéns! O número sorteado foi o ${aleatorio}`)
+    } else {
+        console.log(`Que pena! O número sorteado foi o ${aleatorio}`)
+    }
+
+    
+}
+
+
+funcaoDaSorte(3)
+
+
+// questão 23
+
+function contarPalavras(string) {
+    let contador = 0
+    for(variavel in string.split(" ")){
+        let palavra = string.split(" ")[variavel]
+        contador++
+    }
+
+    return contador
+}
+
+
+console.log(contarPalavras("eu sou bom"))
+
+
+// questão 24
+
+function contarCaractere(caracter, frase) {
+    let contador = 0
+    for(variavel in frase) {
+        if(caracter === frase[variavel]) {
+            contador++
+        }
+    }
+
+    return contador
+}
+
+console.log(contarCaractere("r", "A sorte favorece os audazes"))
+
+
+// questão 25 
+
+function buscarPalavrasSemelhantes(palavra, array) {
+    let lista = []
+    for(variavel of array) {
+        if(variavel.includes(palavra)) {
+            lista.push(variavel)
+        }
+    }
+
+    return lista
+}
+
+
+console.log(buscarPalavrasSemelhantes("pro", ['programação', 'mobile', 'profissional']))
+
+
+// questão 26
+
+function removerVogais(palavra) {
+    let novaPalavra = ''
+    for(variavel of palavra) {
+        if(variavel == 'a' || variavel == 'e' || variavel == 'i' || variavel == 'o' || variavel == 'u') {
+            continue
+        } else {
+            novaPalavra+=variavel
+        }
+    }
+
+    return novaPalavra
+}
+
+console.log(removerVogais('cod3r'))
+console.log(removerVogais('aeiou3'))
+
+
+// questão 27
+
+function inverter(obj) {
+    newObj = {}
+    for(variavel in obj) {
+        //console.log(obj[variavel]) // retorna values
+        //console.log(variavel) // retorna chaves
+
+        newObj[obj[variavel]] = variavel
+    }
+
+    return newObj
+}
+
+console.log(inverter({'a': 1, 'b': 2}))
+
+
+// questão 28
+
+function filtrarPorQuantidadeDeDigitos(array, numero) {
+    lista = []
+    for(variavel of array) {
+        if(variavel.toString().length === numero) {
+            lista.push(variavel)
+        }
+    }
+    
+    return lista
+}
+
+console.log(filtrarPorQuantidadeDeDigitos([38, 2, 365, 10, 125, 11], 2))
+
+
+// questão 29
+
+function segundoMaior(array) {
+    array.sort(function(a, b) {
+        if(a > b) return 1;
+        if(a < b) return -1;
+        return 0;
+    })
+
+    var penultimo = array[array.length - 2]
+    return penultimo
+}
+
+console.log(segundoMaior([3, 5, 10, 9]))
+console.log(segundoMaior([8, 4, 5, 6]))
 
 
 
+// questão 30
 
+function receberMelhorEstudante(obj) {
+    
+}
