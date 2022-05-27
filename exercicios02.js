@@ -457,5 +457,39 @@ console.log(segundoMaior([8, 4, 5, 6]))
 // questão 30
 
 function receberMelhorEstudante(obj) {
-    
+    let novoObj = {'nome': '', 'media': 0}
+    let media = 0
+
+    let somador = 0
+
+    let maiorMedia = 0
+    let nomeMaiorMedia = ''
+
+    for(variavel in obj){
+        console.log(obj[variavel]) // retorna lista
+        console.log(obj[variavel].length) // retorna tamanho
+        console.log(variavel) // retorna nome
+
+        for(nota of obj[variavel]) {
+            somador += nota
+        }
+
+        media = somador / obj[variavel].length
+        somador = 0
+
+        if(media > maiorMedia) {
+            maiorMedia = media
+            nomeMaiorMedia = variavel
+        }
+
+    }
+
+    novoObj['nome'] = nomeMaiorMedia
+    novoObj['media'] = maiorMedia
+
+    return novoObj
+
 }
+
+
+console.log(receberMelhorEstudante({'joao': [8, 7, 6], 'maria': [3, 6, 10]}))
